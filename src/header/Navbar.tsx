@@ -1,3 +1,4 @@
+import { NavbarType } from '@/type';
 import Link from 'next/link';
 import React from 'react';
 

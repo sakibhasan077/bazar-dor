@@ -1,7 +1,6 @@
-// import { connection } from "next/server";
-
 import Link from "next/link";
 import Navbar from "./Navbar";
+import Marquee from "./Marquee";
 
 const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" });
 const Header = () => {
@@ -38,9 +37,7 @@ const Header = () => {
         {/* Navigation */}
         <Navbar></Navbar>
       </div>
-      <div>
-        
-      </div>
+      <Marquee></Marquee>
     </header>
   );
 };
