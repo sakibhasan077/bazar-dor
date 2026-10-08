@@ -5,8 +5,8 @@ import Marquee from "./Marquee";
 const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" });
 const Header = () => {
   return (
-    <header className="bg-[#F0F0F5] ">
-      <div className="max-w-6xl w-full mx-auto sticky top-0">
+    <header className="bg-[#fafcfa] ">
+      <div className="max-w-6xl w-full mx-auto sticky top-0 bg-[#fafcfa]">
         {/* Top Header */}
         <div className="flex justify-between items-center text-[#1D271F]">
           {/* Logo and Date */}
