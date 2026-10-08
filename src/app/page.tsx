@@ -1,4 +1,5 @@
 import Banner from "@/components/banner/Banner";
+import DecreaseCost from "@/components/products/DecreaseCost";
 import IncreaseCost from "@/components/products/IncreaseCost";
 import { AllProductType } from "@/type";
 import next from "next";
@@ -11,6 +12,7 @@ export default async function Home() {
       <div className="w-full max-w-6xl px-4 py-7 mx-auto">
         <Banner></Banner>
         <IncreaseCost productData={data}></IncreaseCost>
+        <DecreaseCost productData={data}></DecreaseCost>
       </div>
     </main>
   );

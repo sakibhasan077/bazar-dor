@@ -34,11 +34,23 @@ const ProductCart = ({ productItem }: CartType) => {
       <div className="flex justify-between">
         <span><span className="text-[20px] font-bold">{convertBanglaNum(productItem?.today)}</span> <span className="text-[14px] font-medium">টাকা</span> </span>
         <span className="text-[14px] font-semibold ">
-          {productItem?.change?.dir === "up" && (
-            <span className="flex  text-red-600 gap-1">
-              ▲ {convertBanglaNum(Math.abs(productItem?.change?.pct))}%
-            </span>
-          )}
+          
+          {productItem.change.dir === "up" ? (
+                <span className="flex  text-red-600 gap-1">
+                  ▲
+                  {convertBanglaNum(Math.abs(productItem.change.pct))}%
+                </span>
+              ) : productItem.change.dir === "down" ? (
+                <span className="flex gap-1 text-green-700">
+                  ▼
+                  {convertBanglaNum(Math.abs(productItem.change.pct))}%
+                </span>
+              ) : (
+                <span className="text-yellow-500">
+                  {" "}
+                  {Math.abs(productItem.change.pct)}%
+                </span>
+              )}
         </span>
       </div>
     </div>
