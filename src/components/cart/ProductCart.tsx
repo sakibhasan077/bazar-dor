@@ -11,7 +11,7 @@ const ProductCart = ({ productItem }: CartType) => {
     return x;
   };
   return (
-    <div className="p-4 bg-[#FAFCFA] rounded-2xl border-2 border-[#E1E8E1]">
+    <div className="p-4 bg-[#FAFCFA] rounded-2xl border border-[#E1E8E1] hover:border-[#047F39]">
       <div className="flex gap-3 items-center">
         <span className="py-2 px-3 bg-[#F0F5F0] rounded-[10px] text-[24px] flex justify-center items-center">{productItem.image}</span>
         <div>
@@ -34,19 +34,19 @@ const ProductCart = ({ productItem }: CartType) => {
       <div className="flex justify-between">
         <span><span className="text-[20px] font-bold">{convertBanglaNum(productItem?.today)}</span> <span className="text-[14px] font-medium">টাকা</span> </span>
         <span className="text-[14px] font-semibold ">
-          
+
           {productItem.change.dir === "up" ? (
-                <span className="flex  text-red-600 gap-1">
+                <span className="flex  text-red-600 gap-1 px-2 py-1 rounded-2xl bg-[#F0F5F0]">
                   ▲
                   {convertBanglaNum(Math.abs(productItem.change.pct))}%
                 </span>
               ) : productItem.change.dir === "down" ? (
-                <span className="flex gap-1 text-green-700">
+                <span className="flex gap-1 text-green-700 px-2 py-1 rounded-2xl bg-[#F0F5F0]">
                   ▼
                   {convertBanglaNum(Math.abs(productItem.change.pct))}%
                 </span>
               ) : (
-                <span className="text-yellow-500">
+                <span className="text-yellow-500 px-2 py-1 rounded-2xl bg-[#F0F5F0]">
                   {" "}
                   {Math.abs(productItem.change.pct)}%
                 </span>

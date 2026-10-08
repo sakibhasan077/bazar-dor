@@ -1,4 +1,5 @@
 import Banner from "@/components/banner/Banner";
+import AllProduct from "@/components/products/AllProduct";
 import DecreaseCost from "@/components/products/DecreaseCost";
 import IncreaseCost from "@/components/products/IncreaseCost";
 import { AllProductType } from "@/type";
@@ -13,6 +14,8 @@ export default async function Home() {
         <Banner></Banner>
         <IncreaseCost productData={data}></IncreaseCost>
         <DecreaseCost productData={data}></DecreaseCost>
+        <AllProduct productData={data}></AllProduct>
+
       </div>
     </main>
   );
