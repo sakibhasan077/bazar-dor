@@ -11,11 +11,6 @@ const ProductCart = ({ productItem }: CartType) => {
     const banglaNumber = new Intl.NumberFormat("bn-BD").format(num);
     return banglaNumber;
   };
-  if(productItem.change.dir === "up"){
-    if(productItem.change.pct.toString().length === 1){
-      console.log((convertBanglaNum(productItem.change.pct) + ".০"));
-    }
-  }
   return (
     <div className="p-4 bg-[#FAFCFA] rounded-2xl border border-[#E1E8E1] hover:border-[#047F39]">
       <div className="flex gap-3 items-center">

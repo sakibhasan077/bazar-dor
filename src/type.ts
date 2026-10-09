@@ -12,6 +12,7 @@ export interface AllProductType {
   nameBn: string;
   slug: string;
   today: number;
+  categoryNameBn: string;
   unit: "piece" | "dozen" | "kg" |"litre";
   change: {
     dir: "down" | "up" | "flat";

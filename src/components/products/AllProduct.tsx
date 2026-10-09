@@ -6,10 +6,6 @@ interface IncreaseCostProductType {
 }
 
 const AllProduct = ({productData}:IncreaseCostProductType) => {
-  // const increaseData = [...productData];
-  // let data = increaseData.filter(item=> item?.change?.dir === "up").sort((a,b) =>{
-  //   return Math.abs(b.change.pct) - Math.abs(a.change.pct)
-  // }).slice(0,6);
   let convertBanglaNum = (num: number) => {
     let x = num
       .toString()
