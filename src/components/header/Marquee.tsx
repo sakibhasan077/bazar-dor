@@ -1,7 +1,7 @@
 import { AllProductType } from "@/type";
 import { FaCaretUp, FaSortDown } from "react-icons/fa";
-import MarqueeText from "react-marquee-text"
-import "react-marquee-text/dist/styles.css"
+import MarqueeText from "react-marquee-text";
+import "react-marquee-text/dist/styles.css";
 
 const Marquee = async () => {
   const res = await fetch(
@@ -17,12 +17,15 @@ const Marquee = async () => {
     return x;
   };
 
-  let moreData = [...data, ...data,...data,...data,...data]
+  let moreData = [...data, ...data, ...data, ...data, ...data];
   return (
-    <div className=" border-y border-gray-300 ">
+    <div className=" border-b border-[#E1E8E1]  mt-32">
       <MarqueeText pauseOnHover direction="right" duration={12}>
         {moreData.map((item) => (
-          <div className="px-4 py-2 text-sm flex gap-1.5" key={item.id}>
+          <div
+            className="px-4 py-2 text-sm flex items-center gap-1.5 border-r border-[#F0F5F0]"
+            key={item.id}
+          >
             <span>{item?.image}</span>
             <span>{item?.nameBn}</span>
             <span className="text-gray-500">
@@ -37,21 +40,22 @@ const Marquee = async () => {
                       ? "পিছ"
                       : ""}
             </span>
-            <span>
+            <span className="ml-1">
               {item.change.dir === "up" ? (
                 <span className="flex  text-red-600 gap-1">
-                  <FaCaretUp className="mt-0.75" />
-                  {convertBanglaNum(Math.abs(item.change.pct))}%
+                  ▲{convertBanglaNum(Math.abs(item.change.pct))}
+                  {item.change.pct.toString().length === 1 && ".০"}%
                 </span>
               ) : item.change.dir === "down" ? (
                 <span className="flex gap-1 text-green-700">
-                  <FaSortDown />
-                  {convertBanglaNum(Math.abs(item.change.pct))}%
+                  ▼{convertBanglaNum(Math.abs(item.change.pct))}
+                  {item.change.pct.toString().length === 1 && ".০"}%
                 </span>
               ) : (
-                <span className="text-yellow-500">
-                  {" "}
-                  {Math.abs(item.change.pct)}%
+                <span className="flex gap-2 ">
+                  —{"  "}
+                  {convertBanglaNum(item.change.pct)}
+                  {item.change.pct.toString().length === 1 && ".০"}%
                 </span>
               )}
             </span>

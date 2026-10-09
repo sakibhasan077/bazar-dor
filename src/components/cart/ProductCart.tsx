@@ -5,15 +5,23 @@ interface CartType {
 }
 const ProductCart = ({ productItem }: CartType) => {
   let convertBanglaNum = (num: number) => {
-    let x = num
-      .toString()
-      .replace(/\d/g, (digit) => "০১২৩৪৫৬৭৮৯"[Number(digit)]);
-    return x;
+    // let x = num
+    //   .toString()
+    //   .replace(/\d/g, (digit) => "০১২৩৪৫৬৭৮৯"[Number(digit)]);
+    const banglaNumber = new Intl.NumberFormat("bn-BD").format(num);
+    return banglaNumber;
   };
+  if(productItem.change.dir === "up"){
+    if(productItem.change.pct.toString().length === 1){
+      console.log((convertBanglaNum(productItem.change.pct) + ".০"));
+    }
+  }
   return (
     <div className="p-4 bg-[#FAFCFA] rounded-2xl border border-[#E1E8E1] hover:border-[#047F39]">
       <div className="flex gap-3 items-center">
-        <span className="py-2 px-3 bg-[#F0F5F0] rounded-[10px] text-[24px] flex justify-center items-center">{productItem.image}</span>
+        <span className="py-2 px-3 bg-[#F0F5F0] rounded-[10px] text-[24px] flex justify-center items-center">
+          {productItem.image}
+        </span>
         <div>
           <p className="font-semibold mb-0.5">{productItem.nameBn}</p>
           <p className="text-xs ">
@@ -32,25 +40,27 @@ const ProductCart = ({ productItem }: CartType) => {
       </div>
       <p className="text-xs text-gray-500 mt-3">আজকের দাম</p>
       <div className="flex justify-between">
-        <span><span className="text-[20px] font-bold">{convertBanglaNum(productItem?.today)}</span> <span className="text-[14px] font-medium">টাকা</span> </span>
+        <span>
+          <span className="text-[20px] font-bold">
+            {convertBanglaNum(productItem?.today)}
+          </span>{" "}
+          <span className="text-[14px] font-medium">টাকা</span>{" "}
+        </span>
         <span className="text-[14px] font-semibold ">
-
           {productItem.change.dir === "up" ? (
-                <span className="flex  text-red-600 gap-1 px-2 py-1 rounded-2xl bg-[#F0F5F0]">
-                  ▲
-                  {convertBanglaNum(Math.abs(productItem.change.pct))}%
-                </span>
-              ) : productItem.change.dir === "down" ? (
-                <span className="flex gap-1 text-green-700 px-2 py-1 rounded-2xl bg-[#F0F5F0]">
-                  ▼
-                  {convertBanglaNum(Math.abs(productItem.change.pct))}%
-                </span>
-              ) : (
-                <span className="text-yellow-500 px-2 py-1 rounded-2xl bg-[#F0F5F0]">
-                  {" "}
-                  {Math.abs(productItem.change.pct)}%
-                </span>
-              )}
+            <span className="flex  text-red-600 gap-1 px-2 py-1 rounded-2xl bg-[#F0F5F0]">
+              ▲{convertBanglaNum(Math.abs(productItem.change.pct))}{productItem.change.pct.toString().length === 1 && ".০"}%
+            </span>
+          ) : productItem.change.dir === "down" ? (
+            <span className="flex gap-1 text-green-700 px-2 py-1 rounded-2xl bg-[#F0F5F0]">
+              ▼{convertBanglaNum(Math.abs(productItem.change.pct))}{productItem.change.pct.toString().length === 1 && ".০"}%
+            </span>
+          ) : (
+            <span className="flex gap-2  px-2 py-1 rounded-2xl bg-[#F0F5F0]">
+              —{"  "}
+              {convertBanglaNum((productItem.change.pct))}{productItem.change.pct.toString().length === 1 && ".০"}%
+            </span>
+          )}
         </span>
       </div>
     </div>
