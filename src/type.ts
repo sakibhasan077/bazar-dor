@@ -29,3 +29,15 @@ export interface AllProductType {
   };
   markets: MarketsType[];
 }
+
+export type SignoutType = {
+  userData: {
+    id: string;
+    createdAt: Date;
+    updatedAt: Date;
+    email: string;
+    emailVerified: boolean;
+    name: string;
+    image?: string | null;
+  };
+};
