@@ -5,6 +5,7 @@ import React from 'react';
 const Navbar = async () => {
   const res = await fetch("https://api.api-store.workers.dev/api/bazardor/categories",{next: {revalidate: 100}});
   const data: NavbarType[] = await res.json();
+  // console.log(data.map(item => console.log(item.slug)))
   return (
     <nav className='px-4 py-2'>
       <ul className='flex gap-1'>

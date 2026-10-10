@@ -1,4 +1,5 @@
 import { AllProductType } from "@/type";
+import Link from "next/link";
 
 interface CartType {
   productItem: AllProductType;
@@ -12,6 +13,7 @@ const ProductCart = ({ productItem }: CartType) => {
     return banglaNumber;
   };
   return (
+    <Link href={`/productDetails/${productItem.id}`}>
     <div className="p-4 bg-[#FAFCFA] rounded-2xl border border-[#E1E8E1] hover:border-[#047F39]">
       <div className="flex gap-3 items-center">
         <span className="py-2 px-3 bg-[#F0F5F0] rounded-[10px] text-[24px] flex justify-center items-center">
@@ -59,6 +61,7 @@ const ProductCart = ({ productItem }: CartType) => {
         </span>
       </div>
     </div>
+    </Link>
   );
 };
 
