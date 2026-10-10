@@ -24,7 +24,7 @@ const Header = () => {
               </Link>
             {/* Sigh In / Sigh Up Button */}
             <div>
-              <Link href={"/"}>
+              <Link href={"/sign-in"}>
                 <button className="btn bg-transparent border-0 hover:shadow-none hover:bg-gray-300">
                   {" "}
                   সাইন ইন{" "}
