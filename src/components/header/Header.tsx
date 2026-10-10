@@ -11,17 +11,17 @@ const Header = () => {
           {/* Top Header */}
           <div className="flex justify-between items-center text-[#1D271F]">
             {/* Logo and Date */}
+              <Link href={"/"}>
             <div className="flex items-center gap-2 px-4 py-3">
-              <div className="px-3 py-1.5 bg-[#05893E] rounded-md">
-                <span className="text-[18px]">🛒</span>
-              </div>
-              <div>
-                <Link href={"/"}>
+                <div className="px-3 py-1.5 bg-[#05893E] rounded-md">
+                  <span className="text-[18px]">🛒</span>
+                </div>
+                <div>
                   <h2 className="text-[20px] font-bold leading-7">বাজার দর</h2>
                   <p className="text-[14px] text-[#111713] leading-4">{date}</p>
-                </Link>
-              </div>
+                </div>
             </div>
+              </Link>
             {/* Sigh In / Sigh Up Button */}
             <div>
               <Link href={"/"}>

@@ -11,7 +11,7 @@ const CategoryData =  ({data}:CategoryType) => {
   const [sortBy, setSortBy] = useState<"default" | "lowToHigh" | "highToLow">(
     "default",
   );
-
+  // BanglaDate.
   let convertBanglaNum = (num: number) => {
     const banglaNumber = new Intl.NumberFormat("bn-BD").format(num);
     return banglaNumber;
@@ -61,7 +61,7 @@ const CategoryData =  ({data}:CategoryType) => {
                     e.target.value as "default" | "lowToHigh" | "highToLow",
                   )
                 }
-                className="select  border border-[#1d271f36] rounded-2xl text-[#1D271F] outline outline-[#1d271f36]"
+                className="select border border-[#1d271f36] rounded-2xl text-[#1D271F] outline outline-[#1d271f36] pt-2"
               >
                 {/* <option disabled={true}>Pick a color</option> */}
                 <option value={"default"}>ডিফল্ট</option>
