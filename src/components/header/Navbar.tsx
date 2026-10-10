@@ -14,7 +14,6 @@ const Navbar =  () => {
   })
 
   const pathName = usePathname();
-  console.log(pathName);
   return (
     <nav className='px-4 py-2'>
       <ul className='flex gap-1'>

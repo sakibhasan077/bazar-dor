@@ -30,7 +30,7 @@ const Header = () => {
                   সাইন ইন{" "}
                 </button>
               </Link>
-              <Link href={"/"}>
+              <Link href={"/sign-up"}>
                 <button className="btn bg-[#05893E] hover:bg-[#057c39] text-white ml-1">
                   {" "}
                   সাইন আপ{" "}
