@@ -1,7 +1,7 @@
 
 import CategoryData from "@/components/categoryProduct/CategoryProduct";
 import { AllProductType } from "@/type";
-import { Suspense } from "react";
+
 
 const categoryProduct = async ({
   params,
@@ -27,16 +27,6 @@ const categoryProduct = async ({
   );
 };
 
-// const categoryProduct = ({
-//   params,
-// }: {
-//   params: Promise<{ productId: string }>;
-// }) => {
-//   return (
-//     <Suspense fallback={<div className="min-h-96" />}>
-//       <CategoryProductContent params={params} />
-//     </Suspense>
-//   );
-// };
+
 
 export default categoryProduct;

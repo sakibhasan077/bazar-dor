@@ -50,7 +50,7 @@ const CategoryData =  ({data}:CategoryType) => {
           </div>
         </div>
         {/* Middle */}
-        <div className="p-4.25 bg-[#FAFCFA] border-2 border-[#E1E8E1] rounded-2xl flex justify-end items-center mt-6 mb-4">
+        <div className="p-4.25 bg-[#FAFCFA] border-2 border-[#E1E8E1] rounded-2xl flex justify-center sm:justify-end items-center mt-6 mb-4">
           <div className="mr-6">
             <div className="flex gap-3 items-center">
               <span className="min-w-15 text-[#8A92A0] text-sm">সাজান:</span>
@@ -76,7 +76,7 @@ const CategoryData =  ({data}:CategoryType) => {
           <p className="text-[#1d271fb5] text-sm leading-5 my-4">
             মোট {convertBanglaNum(data.length)}টি পণ্য দেখানো হচ্ছে
           </p>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {sortBy === "default" ? data.map((item) => (
               <ProductCart key={item.id} productItem={item}></ProductCart>
             )): sortBy === "lowToHigh" ? sortLowToHigh.map((item) => (

@@ -47,7 +47,7 @@ const ProductDetailsPage = async ({
       </div>
 
       {/* Top  */}
-      <div className="p-5.25 bg-[#FAFCFA] border-2 border-[#E1E8E1] rounded-2xl flex justify-between mt-6">
+      <div className="p-5.25 bg-[#FAFCFA] border-2 border-[#E1E8E1] rounded-2xl flex flex-col sm:flex-row justify-center sm:justify-between gap-8 mt-6">
         {/* Left */}
         <div className="flex items-center gap-4">
           <div className="px-5.5 py-5 bg-[#F0F5F0] rounded-xl text-4xl">
@@ -114,9 +114,9 @@ const ProductDetailsPage = async ({
                     ? "পিছ"
                     : ""}
           </p>
-          <p>
+          <p className="text-center flex justify-center">
             {data.change.dir === "up" ? (
-              <span className="flex  text-red-600 gap-1 px-2 py-1 rounded-2xl ">
+              <span className="flex text-red-600 gap-1 px-2 py-1 rounded-2xl ">
                 ▲{convertBanglaNum(Math.abs(data.change.pct))}
                 {data.change.pct.toString().length === 1 && ".০"}%
               </span>
@@ -143,7 +143,7 @@ const ProductDetailsPage = async ({
         </h3>
 
         {/* Min max average price */}
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {/* Low */}
           <div className="text-[#1D271F] px-6.25 py-4.25 border border-[#E1E8E1] rounded-xl">
             <p className="text-xs leading-4.5">সর্বনিম্ন দাম</p>

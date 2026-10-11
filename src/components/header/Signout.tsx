@@ -3,12 +3,11 @@ import { SignoutType } from "@/type";
 import { ArrowRightFromSquare } from "@gravity-ui/icons";
 import { Avatar, Dropdown, Label } from "@heroui/react";
 import Link from "next/link";
+import SignoutButton from "./SignoutButton";
 
 const Signout = ({ userData }: SignoutType) => {
   let userFirstName = userData.name.split(" ")[0];
-  const handleSignOut = async () => {
-    const resData = await signOut();
-  };
+
   return (
     <div>
       <Dropdown>
@@ -39,12 +38,8 @@ const Signout = ({ userData }: SignoutType) => {
               </Link>
             </Dropdown.Item>
             <Dropdown.Item id="logout" textValue="Logout" variant="danger">
-              <div
-                className="flex w-full items-center justify-between gap-2"
-                onClick={handleSignOut}
-              >
-                <Label>সাইন আউট</Label>
-                <ArrowRightFromSquare className="size-3.5 text-danger" />
+              <div>
+                <SignoutButton></SignoutButton>
               </div>
             </Dropdown.Item>
           </Dropdown.Menu>

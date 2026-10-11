@@ -14,7 +14,7 @@ const IncreaseCost = ({productData}:IncreaseCostProductType) => {
   return (
     <div className='mt-12'>
       <h2 className='text-[20px] mb-3'><span className='text-[#D03739]'>▲</span> <span className='font-bold text-[#1D271F]'>আজ দাম বেড়েছে</span> </h2>
-      <div className='grid grid-cols-3 gap-4'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
         {
           data.map(item=> <ProductCart key={item.id} productItem={item}></ProductCart>)
         }

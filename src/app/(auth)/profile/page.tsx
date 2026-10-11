@@ -47,7 +47,7 @@ const ProfilePage = () => {
   },})
   }
   return (
-    <div className="flex justify-center w-full max-w-6xl mx-auto mt-10 mb-15">
+    <div className="flex justify-center w-screen sm:w-full max-w-6xl mx-auto mt-10 mb-15">
       <div className="mx-4">
         <h2 className=" text-2xl font-bold leading-8 text-[#1D271F]">
           আমার প্রোফাইল
@@ -57,7 +57,7 @@ const ProfilePage = () => {
         </p>
         {/* Profile Div */}
         <div className="bg-[#FAFCFA] border border-[#E1E8E1] p-6 rounded-2xl my-6">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:justify-between items-start sm:items-center">
             {/* left */}
             <div className="flex gap-4 justify-between items-center">
               <div className="w-18 ">
@@ -78,7 +78,7 @@ const ProfilePage = () => {
           <h3 className="text-[18px] font-semibold leading-7 mb-3 text-[#1D271F]">
             নাম পরিবর্তন করুন
           </h3>
-          <Form className="flex w-130 p-6 flex-col gap-4 " onSubmit={onSubmit}>
+          <Form className="flex w-90 sm:w-130 p-6 flex-col gap-4 " onSubmit={onSubmit}>
             <TextField
               name="name"
               isRequired
