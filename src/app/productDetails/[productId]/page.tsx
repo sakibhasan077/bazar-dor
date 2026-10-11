@@ -1,5 +1,6 @@
 import { AllProductType } from "@/type";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 const ProductDetailsPage = async ({
   params,
@@ -11,6 +12,9 @@ const ProductDetailsPage = async ({
     `https://api.api-store.workers.dev/api/bazardor/products/${productId}`,
   );
   const data: AllProductType = await res.json();
+  if (!data.id) {
+      notFound();
+    }
   console.log(data.markets);
   let convertBanglaNum = (num: number) => {
     const banglaNumber = new Intl.NumberFormat("bn-BD").format(num);

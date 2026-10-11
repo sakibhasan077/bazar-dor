@@ -2,11 +2,15 @@
 import { useSession } from "@/lib/auth-client";
 import Link from "next/link";
 import Signout from "./Signout";
+import NavbarSkeleton from "./NavbarSkeleton";
 
 
 const SignupSignIn = () => {
-  const {data} = useSession();
+  const {data,isPending} = useSession();
   const users = data?.user;
+  if(isPending){
+    return <NavbarSkeleton></NavbarSkeleton>
+  }
   return (
     <>
       {users ? (
