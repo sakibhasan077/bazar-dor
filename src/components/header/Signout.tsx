@@ -17,8 +17,8 @@ const Signout = ({ userData }: SignoutType) => {
             <Avatar.Image alt="User Image" src={`${userData?.image}`} />
             <Avatar.Fallback delayMs={600}>{userFirstName}</Avatar.Fallback>
           </Avatar>
-          <span className="font-medium ml-2 text-[17px]">
-            {userData.name} <span className="text-xs">▼</span>
+          <span className="font-medium ml-2 text-[17px] ">
+            <span className="hidden md:inline-block">{userData.name} </span><span className="text-xs">▼</span>
           </span>
         </Dropdown.Trigger>
         <Dropdown.Popover>

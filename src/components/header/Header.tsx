@@ -2,6 +2,7 @@ import Link from "next/link";
 import Navbar from "./Navbar";
 import Marquee from "./Marquee";
 import SignupSignIn from "./SignupSignIn";
+import DropDownMenu from "./DropDownMenu";
 
 const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" });
 
@@ -22,7 +23,7 @@ const Header = () => {
                 </div>
                 <div>
                   <h2 className="text-[20px] font-bold leading-7">বাজার দর</h2>
-                  <p className="text-[14px] text-[#111713] leading-4">{date}</p>
+                  <p className="text-[13px] text-[rgba(17,23,19,0.69)] leading-4">{date}</p>
                 </div>
               </div>
             </Link>
@@ -30,7 +31,12 @@ const Header = () => {
             <SignupSignIn></SignupSignIn>
           </div>
           {/* Navigation */}
+          <div className="hidden md:block">
           <Navbar></Navbar>
+          </div>
+          <div className="md:hidden pl-5 pb-2">
+            <DropDownMenu></DropDownMenu>
+          </div>
         </div>
       </div>
       <Marquee></Marquee>
