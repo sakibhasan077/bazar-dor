@@ -13,11 +13,19 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 interface SignUpDataType {
   name: string;
   email: string;
   password: string;
+}
+
+interface ErrorType {
+  code?: string | undefined;
+  message?: string | undefined;
+  status: number;
+  statusText: string;
 }
 
 const SighUpPage = () => {
@@ -38,20 +46,27 @@ const SighUpPage = () => {
       password: resData.password,
       callbackURL: "/",
     });
-
+    if (data) {
+      toast.success("সফলভাবে সাইন আপ হয়েছে");
+    }
+    if (error) {
+      toast.error("ব্যবহারকারী ইতিমধ্যে বিদ্যমান। অন্য একটি ইমেল ব্যবহার করুন");
+    }
   };
   // Google provider
-  const signInGoogle = async () =>{
+  const signInGoogle = async () => {
     const googleData = await signIn.social({
       provider: "google",
-    })
-  }
+    });
+    toast.success("সফলভাবে সাইন আপ হয়েছে");
+  };
   // Github Provider
-  const signInGithub = async () =>{
+  const signInGithub = async () => {
     const githubData = await signIn.social({
       provider: "github",
-    })
-  }
+    });
+    toast.success("সফলভাবে সাইন আপ হয়েছে");
+  };
   return (
     <div className="flex justify-center w-full max-w-6xl mx-auto mt-10 mb-15">
       <div className="mx-4">
@@ -62,7 +77,10 @@ const SighUpPage = () => {
           বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।
         </p>
         <div className="bg-[#FAFCFA] border border-[#E1E8E1] p-6 rounded-2xl">
-          <Form className="flex w-85 sm:w-96 flex-col gap-4" onSubmit={onSubmit}>
+          <Form
+            className="flex w-85 sm:w-96 flex-col gap-4"
+            onSubmit={onSubmit}
+          >
             <TextField
               name="name"
               isRequired
@@ -232,9 +250,11 @@ const SighUpPage = () => {
                 </svg>
               </span>{" "}
               <span>Google দিয়ে চালিয়ে যান</span>
-
             </button>
-            <button onClick={signInGithub} className="btn bg-transparent flex flex-col sm:flex-row p-3 h-min  items-center">
+            <button
+              onClick={signInGithub}
+              className="btn bg-transparent flex flex-col sm:flex-row p-3 h-min  items-center"
+            >
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

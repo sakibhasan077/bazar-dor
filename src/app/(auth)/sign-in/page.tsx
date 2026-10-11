@@ -13,13 +13,14 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 interface SignUpDataType {
   email: string;
   password: string;
 }
 
-const SighUpPage = () => {
+const SighInPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   // handler function
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -34,18 +35,26 @@ const SighUpPage = () => {
       callbackURL: "/",
       rememberMe: true,
     });
+    if (data) {
+      toast.success("সফলভাবে সাইন ইন হয়েছে");
+    }
+    if (error) {
+      toast.error(error?.message ?? "Something went wrong");
+    }
   };
   // Google provider
   const signInGoogle = async () => {
     const googleData = await signIn.social({
       provider: "google",
     });
+    toast.success("সফলভাবে সাইন ইন হয়েছে");
   };
   // Github Provider
   const signInGithub = async () => {
     const githubData = await signIn.social({
       provider: "github",
     });
+    toast.success("সফলভাবে সাইন ইন হয়েছে");
   };
   return (
     <div className="flex justify-center w-full max-w-6xl mx-auto mt-10 mb-15">
@@ -57,7 +66,10 @@ const SighUpPage = () => {
           বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।{" "}
         </p>
         <div className="bg-[#FAFCFA] border border-[#E1E8E1] p-6 rounded-2xl">
-          <Form className="flex w-85 sm:w-96 flex-col gap-4" onSubmit={onSubmit}>
+          <Form
+            className="flex w-85 sm:w-96 flex-col gap-4"
+            onSubmit={onSubmit}
+          >
             <TextField
               name="email"
               type="email"
@@ -163,9 +175,11 @@ const SighUpPage = () => {
                 </svg>
               </span>{" "}
               <span>Google দিয়ে চালিয়ে যান</span>
-
             </button>
-            <button onClick={signInGithub} className="btn bg-transparent flex flex-col sm:flex-row p-3 h-min  items-center">
+            <button
+              onClick={signInGithub}
+              className="btn bg-transparent flex flex-col sm:flex-row p-3 h-min  items-center"
+            >
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +197,7 @@ const SighUpPage = () => {
 
           <div className="text-center mt-5">
             <p>
-              অ্যাকাউন্ট নেই? {" "}
+              অ্যাকাউন্ট নেই?{" "}
               <Link href={"/sign-up"} className="text-[#05893E]">
                 সাইন আপ করুন
               </Link>
@@ -199,4 +213,4 @@ const SighUpPage = () => {
   );
 };
 
-export default SighUpPage;
+export default SighInPage;

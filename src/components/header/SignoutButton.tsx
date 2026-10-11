@@ -1,21 +1,25 @@
-
 import { signOut } from "@/lib/auth-client";
 import { ArrowRightFromSquare } from "@gravity-ui/icons";
-import {  Label } from "@heroui/react";
+import { Label } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const SignoutButton = () => {
-
   const router = useRouter();
 
   const handleSignOut = async () => {
-    const resData = await signOut({
-  fetchOptions: {
-    onSuccess: () => {
-      router.push("/sign-in"); // redirect to login page
-    },
-  },
-});
+    await signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          toast.success("সফলভাবে সাইন আউট হয়েছে");
+          router.push("/sign-in");
+        },
+
+        onError: (error) => {
+          toast.error(error.error.message || "Sign out failed!");
+        },
+      },
+    });
   };
   return (
     <div

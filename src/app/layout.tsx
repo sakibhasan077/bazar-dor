@@ -3,6 +3,7 @@ import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 const hindSiliguri = Hind_Siliguri({
   weight:["300", "400" , "500" , "600" , "700"],
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         </main>
         <Footer></Footer>
+        <Toaster/>
       </body>
     </html>
   );
