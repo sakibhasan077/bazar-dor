@@ -43,7 +43,7 @@ const Signout = ({ userData }: SignoutType) => {
                 className="flex w-full items-center justify-between gap-2"
                 onClick={handleSignOut}
               >
-                <Label>Log Out</Label>
+                <Label>সাইন আউট</Label>
                 <ArrowRightFromSquare className="size-3.5 text-danger" />
               </div>
             </Dropdown.Item>

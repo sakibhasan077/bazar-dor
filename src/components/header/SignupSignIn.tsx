@@ -7,7 +7,6 @@ import Signout from "./Signout";
 const SignupSignIn = () => {
   const {data} = useSession();
   const users = data?.user;
-  console.log(users);
   return (
     <>
       {users ? (
