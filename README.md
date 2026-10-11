@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর | BazarDor
 
-## Getting Started
+**BazarDor** is a web application that helps users explore products and check market prices with a simple, user-friendly interface. It makes product browsing easier by organizing products into categories and displaying relevant product information.
 
-First, run the development server:
+## ✨ Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **📦 Product Browsing** — Explore available products and their market prices.
+- **🗂️ Category-Based Navigation** — Browse products by category for easy discovery.
+- **🔍 Product Details** — View relevant information about individual products.
+- **📱 Responsive Design** — Enjoy a smooth browsing experience across desktop, tablet, and mobile devices.
+- **⚡ Dynamic Routing** — Navigate to category-specific pages using dynamic routes.
+- **🔄 Loading Skeletons** — See placeholder UI while content is loading.
+- **🚫 Custom 404 Page** — Display a friendly not-found page when requested content is unavailable.
+- **🔐 Authentication** — Support user authentication and session management.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js** — React framework for building the web application.
+- **React.js** — Component-based user interface development.
+- **TypeScript** — Type-safe JavaScript development.
+- **Tailwind CSS** — Responsive styling and UI design.
+- **Better Auth** — Authentication and session management.
+- **REST API** — Fetching product and category data.
+- **Git & GitHub** — Version control and source code management.
+- **Vercel** — Deployment and hosting.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Getting Started
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+Make sure you have the following installed:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js
+- npm, yarn, pnpm, or bun
+- Git
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. Clone the repository:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   git clone YOUR_REPOSITORY_URL
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Navigate to the project directory:
+
+   ```bash
+   cd YOUR_PROJECT_FOLDER
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Configure the required environment variables in a `.env.local` file, if needed.
+
+5. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+## 📁 Project Overview
+
+The application uses the Next.js App Router to organize pages and dynamic routes. Reusable React components help maintain a consistent user interface, while TypeScript improves code reliability.
+
+
+
+⭐ If you find this project useful, consider giving the repository a star!
