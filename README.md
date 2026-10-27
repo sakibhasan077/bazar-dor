@@ -72,7 +72,7 @@ npm install
 npm run dev
 ```
 
-The app is now running at **http://localhost:3000**.
+The app is now running at **https://bazar-dor-three-inky.vercel.app/**.
 
 ### Environment Variables
 
